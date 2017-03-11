@@ -8,7 +8,7 @@ namespace ptl {
 	// Stable version of Counting Sort
 	// Please note that type T must be an Integer type
 	template <typename T>
-	void counting_sort(T pArray[], size_t pSize, size_t pRange){
+	void countingSort(T pArray[], size_t pSize, size_t pRange){
 
 		// Create Counting Array and initialize all members to zero
 		T pCount[pRange + 1], pOutput[pSize];
@@ -42,7 +42,7 @@ namespace ptl {
 	// Unstable version of Counting Sort
 	// Please note that type T must be an Integer type
 	template <typename T>
-	void unstable_counting_sort(T pArray[], size_t pSize, size_t pRange){
+	void unstableCountingSort(T pArray[], size_t pSize, size_t pRange){
 
 		// Create Counting Array and initialize all members to zero
 		T pCount[pRange + 1];

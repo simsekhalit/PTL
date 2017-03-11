@@ -6,38 +6,38 @@
 
 namespace ptl {
 	template <class T>
-	class binary_node {
+	class BinaryNode {
 	public:
-		binary_node(T pData) : pData(pData), pLeft(NULL), pRight(NULL) {}
+		BinaryNode(T pData) : pData(pData), pLeft(NULL), pRight(NULL) {}
 		T pData;
-		binary_node *pLeft, *pRight;
+		BinaryNode *pLeft, *pRight;
 	};
 
 	template <class T>
-	class binary_tree
+	class BinaryTree
 	{
 	private:
-		binary_node<T> *pRoot;
+		BinaryNode<T> *pRoot;
 	public:
-		binary_tree() : pRoot(NULL) {}
+		BinaryTree() : pRoot(NULL) {}
 
 		void insert(T pData){
 			if (pRoot == NULL){
-				pRoot = new binary_node<T>(pData);
+				pRoot = new BinaryNode<T>(pData);
 				return;
 			}
-			binary_node<T> *pNode = pRoot;
+			BinaryNode<T> *pNode = pRoot;
 			while (true){
 				if (pData < pNode->pData){
 					if (pNode->pLeft == NULL){
-						pNode->pLeft = new binary_node<T>(pData);
+						pNode->pLeft = new BinaryNode<T>(pData);
 						return;
 					}
 					pNode = pNode->pLeft;
 				}
 				else {
 					if (pNode->pRight == NULL){
-						pNode->pRight = new binary_node<T>(pData);
+						pNode->pRight = new BinaryNode<T>(pData);
 						return;
 					}
 					pNode = pNode->pRight;
@@ -45,8 +45,8 @@ namespace ptl {
 			}
 		}
 
-		binary_node<T>* search(T pData){
-			binary_node<T>* pNode = pRoot;
+		BinaryNode<T>* search(T pData){
+			BinaryNode<T>* pNode = pRoot;
 			while (pNode != NULL) {
 				if (pNode->pData == pData){
 					return pNode;
@@ -65,7 +65,7 @@ namespace ptl {
 			preorder(pRoot);
 		}
 
-		void preorder(binary_node<T> *pNode){
+		void preorder(BinaryNode<T> *pNode){
 			if (pNode){
 				print(pNode);
 				inorder(pNode->pLeft);
@@ -77,7 +77,7 @@ namespace ptl {
 			inorder(pRoot);
 		}
 
-		void inorder(binary_node<T> *pNode){
+		void inorder(BinaryNode<T> *pNode){
 			if (pNode){
 				inorder(pNode->pLeft);
 				print(pNode);
@@ -89,7 +89,7 @@ namespace ptl {
 			postorder(pRoot);
 		}
 
-		void postorder(binary_node<T> *pNode){
+		void postorder(BinaryNode<T> *pNode){
 			if (pNode){
 				inorder(pNode->pLeft);
 				inorder(pNode->pRight);
@@ -97,7 +97,7 @@ namespace ptl {
 			}
 		}
 
-		void print(binary_node<T> *node){
+		void print(BinaryNode<T> *node){
 			std::cout << node->pData << std::endl;
 		}
 	};

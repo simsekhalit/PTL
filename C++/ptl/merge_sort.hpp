@@ -5,33 +5,33 @@
 
 namespace ptl {
 	template <typename T>
-	void merge_sort(T[], size_t, size_t);
+	void mergeSort(T[], size_t, size_t);
 	
 	template <typename T>
-	void merge_sort_merge(T[], size_t, size_t, size_t);
+	void mergeSortMerge(T[], size_t, size_t, size_t);
 
 	// This algorithm takes advantage of the easiness of merging 2 sorted arrays that will result a new sorted array
 	template <typename T>
-	void merge_sort(T pArray[], size_t pSize) {
-		merge_sort(pArray, 0, pSize - 1);
+	void mergeSort(T pArray[], size_t pSize) {
+		mergeSort(pArray, 0, pSize - 1);
 	}
 
 	template <typename T>
-	void merge_sort(T pArray[], size_t pLeft, size_t pRight){
+	void mergeSort(T pArray[], size_t pLeft, size_t pRight){
 		if (pLeft < pRight){
 			size_t pMid = (pLeft + pRight) / 2;
 
 			// Sorting first and second halves
-			merge_sort (pArray, pLeft, pMid);
-			merge_sort (pArray, pMid + 1, pRight);
+			mergeSort (pArray, pLeft, pMid);
+			mergeSort (pArray, pMid + 1, pRight);
 
 			// Merging them afterwards
-			merge_sort_merge (pArray, pLeft, pMid, pRight);
+			mergeSortMerge (pArray, pLeft, pMid, pRight);
 		}
 	}
 
 	template <typename T>
-	void merge_sort_merge(T pArray[], size_t pLeft, size_t pMid, size_t pRight){
+	void mergeSortMerge(T pArray[], size_t pLeft, size_t pMid, size_t pRight){
 		size_t pSize1 = pMid - pLeft + 1;
 		size_t pSize2 = pRight - pMid;
 

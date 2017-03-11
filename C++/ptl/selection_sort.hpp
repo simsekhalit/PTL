@@ -6,7 +6,7 @@
 
 namespace ptl {
 	template <typename T>
-	void selection_sort(T pArray[], size_t pSize){
+	void selectionSort(T pArray[], size_t pSize){
 		for (size_t i = 0; i < pSize - 1; ++i){
 			size_t pIndex = i;
 			for (size_t j = i + 1; j < pSize; ++j){
