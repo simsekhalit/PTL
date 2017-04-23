@@ -19,7 +19,7 @@ namespace ptl {
 		// But it has been reported that MapVirtualKey function rarely does not work properly.
 		// Therefore I left second argument optional.
 		void keyDown(const BYTE pVirtualCode, BYTE pScanCode = 0){
-			if (pScanCode = 0) {
+			if (pScanCode == 0) {
 				pScanCode = MapVirtualKey(pVirtualCode, MAPVK_VK_TO_VSC);
 			}
 			keybd_event(pVirtualCode, pScanCode, 0, 0);
@@ -30,7 +30,7 @@ namespace ptl {
 		// But it has been reported that MapVirtualKey function rarely does not work properly.
 		// Therefore I left second argument optional.
 		void keyUp(const BYTE pVirtualCode, BYTE pScanCode = 0){
-			if (pScanCode = 0) {
+			if (pScanCode == 0) {
 				pScanCode = MapVirtualKey(pVirtualCode, MAPVK_VK_TO_VSC);
 			}
 			keybd_event(pVirtualCode, pScanCode, KEYEVENTF_KEYUP, 0);
