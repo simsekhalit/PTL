@@ -61,44 +61,51 @@ namespace ptl {
 			return NULL;
 		}
 
-		void preorder(){
-			preorder(pRoot);
+		void printPreorder(){
+			printPreorder(pRoot);
+			print();
 		}
 
-		void preorder(BinaryNode<T> *pNode){
+		void printPreorder(BinaryNode<T> *pNode){
 			if (pNode){
 				print(pNode);
-				inorder(pNode->pLeft);
-				inorder(pNode->pRight);
+				printPreorder(pNode->pLeft);
+				printPreorder(pNode->pRight);
 			}
 		}
 
-		void inorder(){
-			inorder(pRoot);
+		void printInorder(){
+			printInorder(pRoot);
+			print();
 		}
 
-		void inorder(BinaryNode<T> *pNode){
+		void printInorder(BinaryNode<T> *pNode){
 			if (pNode){
-				inorder(pNode->pLeft);
+				printInorder(pNode->pLeft);
 				print(pNode);
-				inorder(pNode->pRight);
+				printInorder(pNode->pRight);
 			}
 		}
 
-		void postorder(){
-			postorder(pRoot);
+		void printPostorder(){
+			printPostorder(pRoot);
+			print();
 		}
 
-		void postorder(BinaryNode<T> *pNode){
+		void printPostorder(BinaryNode<T> *pNode){
 			if (pNode){
-				inorder(pNode->pLeft);
-				inorder(pNode->pRight);
+				printPostorder(pNode->pLeft);
+				printPostorder(pNode->pRight);
 				print(pNode);
 			}
+		}
+
+		void print(){
+			std::cout << std::endl;
 		}
 
 		void print(BinaryNode<T> *node){
-			std::cout << node->pData << std::endl;
+			std::cout << node->pData << ' ';
 		}
 	};
 }
