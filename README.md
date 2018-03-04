@@ -1,1 +1,1 @@
-My personal template library with continous growth
+My personal template library
